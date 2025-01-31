@@ -66,6 +66,9 @@ h3 {
   position: relative;
 }
 
+.productListDetails {
+  padding-inline: 25px;
+}
 .productListDetails h2 {
   font-size: 1.2rem;
 }
