@@ -50,7 +50,7 @@ h3 {
   color: white;
 }
 
-.product_grid {
+.productListContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -60,17 +60,10 @@ h3 {
 
 .product_list_container {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
+  /* grid-template-rows: subgrid;
+  grid-row: span 3; */
   background-color: #f1f1f1;
   position: relative;
-}
-
-.productListDetails {
-  padding-inline: 25px;
-}
-.productListDetails h2 {
-  font-size: 1.2rem;
 }
 
 .read_more {
@@ -170,7 +163,7 @@ select {
     margin: 0;
   }
 
-  .product_grid {
+  .productListContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto auto;
