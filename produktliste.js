@@ -1,15 +1,13 @@
+const categary = "Apparel";
 const listContainer = document.querySelector(".productListContainer");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/`)
+fetch(`https://kea-alt-del.dk/t7/api/products?limit=100`)
   .then((response) => response.json())
-  .then((data) => showList(data));
+  .then(showList);
 
-function showList(products) {
-  console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `
+function showList(data) {
+  const markup = data.map(
+    (product) => `
        
      <div class="product_list_container">
                      <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="Produktbillede" class="productListImage/>
