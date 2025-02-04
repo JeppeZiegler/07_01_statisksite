@@ -1,4 +1,4 @@
-const myProduct = new URLSearchParams(window.location.search).get("productid");
+const myProduct = new URLSearchParams(window.location.search).get("category");
 
 console.log("the productid is", myProduct);
 
