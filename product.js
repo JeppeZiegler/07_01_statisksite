@@ -1,24 +1,22 @@
-const myProduct = new URLSearchParams(window.location.search).get("category");
+const myProduct = new URLSearchParams(window.location.search).get("product_id");
 
-console.log("the productid is", myProduct);
+console.log("product_id", myProduct);
 
 const productId = myProduct;
-const productContainer = document.querySelector(".productContainer");
+let productContainer = document.querySelector(".productContainer");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
-  .then((data) => showProduct(data));
-//   .then(showProduct);
-
-function showProduct(data) {
-  productContainer.innerHTML = `
+  .then((data) => {
+    productContainer.innerHTML = `
     
     <figure>
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Produktbillede" class="productImage/>
-                <img src="img/sahara.png" alt="Sahara">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Produktbillede" class="productImage"/>
                 </figure>
                 <div class="productDetails">
-                    <h1 class="productname">${data.productdisplayname}</h1>
+                    <h2 class="productName">
+                    ${data.productdisplayname}
+                    </h2>
                     <h3 class ="brandName">${data.brandname}</h3>
                     <h3 class ="subCategory">${data.subcategory}</h3>
                     <h5>Color</h5>
@@ -26,6 +24,8 @@ function showProduct(data) {
               
                     <h5>Price</h5>
                     <p class="price">DKK ${data.price},- </p>
+                    <span class="saleLabel ${data.discount && "isOnSale"} ${!data.discount && "hidden"} ">
+                    -${data.discount}%</span>
                     <h5>Size</h5>
 
                     <select id="size" name="size">
@@ -41,4 +41,4 @@ function showProduct(data) {
 
             
     `;
-}
+  });

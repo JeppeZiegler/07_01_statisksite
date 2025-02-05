@@ -202,3 +202,20 @@ select {
     margin-bottom: 20px;
   }
 }
+
+.saleLabel {
+  position: absolute;
+  visibility: hidden;
+  top: 15px;
+  left: 15px;
+  background-color: tomato;
+  padding: 5px 8px;
+}
+
+.isOnSale {
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
