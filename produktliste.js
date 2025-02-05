@@ -12,7 +12,9 @@ function showList(data) {
   const markup = data
     .map(
       (product) =>
-        `<div class="product_list_container ${product.discount && "discount"} ${product.soldout && "sold_out"} ">
+        `<div class="product_list_container ">
+          <div class="sold_out_label ${product.soldout && "sold_out"} ">Sold out</div>
+          <div class="discount_label  ${product.discount && "discount"}">-${product.discount}%</div>
                      <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="Produktbillede" class="productListImage/>
                     <div class="productListDetails">
                         <h2>${product.productdisplayname}</h2>
