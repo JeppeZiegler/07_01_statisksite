@@ -32,7 +32,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 
                     <h5>Price</h5>
                     <p class="price">Pris ${data.price},- </p>
-                    <p class="price_discount ${data.discount && "isOnSale"} ${!data.discount && "hidden"}">Pris efter rabat ${data.price - data.discount},- </p>
+                    <p class="price_discount ${data.discount && "isOnSale"} ${!data.discount && "hidden"}">Pris efter rabat ${data.price - data.price * (data.discount / 100)},- </p>
                     <span class="saleLabel_product ${data.discount && "isOnSale"} ${!data.discount && "hidden"} ">
                     -${data.discount}%</span>
                     <h5>Size</h5>
